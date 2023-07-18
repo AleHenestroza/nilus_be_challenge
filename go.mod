@@ -1,3 +1,3 @@
-module github.com/alehenestroza/fifa-review
+module github.com/alehenestroza/fifa_review
 
 go 1.20

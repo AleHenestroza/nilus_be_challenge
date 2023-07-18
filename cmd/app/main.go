@@ -4,15 +4,9 @@ import (
 	"flag"
 	"fmt"
 	"os"
-)
 
-func readFile(filePath string) ([]byte, error) {
-	file, err := os.ReadFile(filePath)
-	if err != nil {
-		return nil, err
-	}
-	return file, nil
-}
+	"github.com/alehenestroza/fifa_review/internal/file_utils"
+)
 
 func main() {
 	var (
@@ -24,13 +18,13 @@ func main() {
 	flag.StringVar(&matchPath, "match", "", "Path to match file")
 	flag.Parse()
 
-	rules, err := readFile(rulesPath)
+	rules, err := file_utils.ReadFile(rulesPath)
 	if err != nil {
 		fmt.Println(err)
 		os.Exit(1)
 	}
 
-	match, err := readFile(matchPath)
+	match, err := file_utils.ReadFile(matchPath)
 	if err != nil {
 		fmt.Println(err)
 		os.Exit(1)
